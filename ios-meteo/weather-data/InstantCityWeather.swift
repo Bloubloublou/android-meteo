@@ -9,7 +9,7 @@ public class InstantCityWeather {
     private var windSpeed: Int
     private var pressure: Int
     
-    public init(_ weather: Int, weatherDescription: String, _ kelvinTemperature: Double, _ humidity: Int, _ windSpeed: Int, _ pressure: Int) {
+    public init(_ weather: Int,_ weatherDescription: String, _ kelvinTemperature: Double, _ humidity: Int, _ windSpeed: Int, _ pressure: Int) {
         self.weather = weather
         self.weatherDescription = weatherDescription
         self.kelvinTemperature = kelvinTemperature

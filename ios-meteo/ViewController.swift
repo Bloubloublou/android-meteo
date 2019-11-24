@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private var apiCaller: ApiCaller!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        apiCaller = ApiCaller()
+        apiCaller.updateForecasts(["Miramas","Valbonne","Grasse"])
     }
 
 
