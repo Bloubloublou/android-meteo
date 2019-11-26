@@ -17,9 +17,13 @@ class UserPrefs {
     
     public func addCity(_ city: String) {
         var cities:[String] = getCities()
+        for registeredCity in cities {
+            if(registeredCity.lowercased() == city.lowercased()) {
+                return;
+            }
+        }
         cities.append(city)
         setCities(cities)
-        
     }
     
     public func setCities(_ cities: [String]) {

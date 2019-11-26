@@ -8,15 +8,17 @@
 
 import UIKit
 
-class ListViewController: UITableViewController {
+class ListViewController: UITableViewController,ApiCallerDelegate {
     
     private var apiCaller: ApiCaller!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UserPrefs.getInstance().addCity("Marseille")
-        apiCaller = ApiCaller()
+        apiCaller = ApiCaller(self)
     apiCaller.updateForecasts(UserPrefs.getInstance().getCities())
+        
+        print("henlo list")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +40,10 @@ class ListViewController: UITableViewController {
             //cell.weatherImageView = TODO
         //} else {}
         return cell
+    }
+    
+    func callHasFinished() {
+        // nothing
     }
 }
 
