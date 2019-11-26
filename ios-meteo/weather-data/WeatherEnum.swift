@@ -9,7 +9,7 @@ public enum WeatherEnum {
     case CLEAR
     case CLOUDS
 
-    public func getWeather(id: Int) -> WeatherEnum {
+    public static func getWeather(_ id: Int) -> WeatherEnum {
         let firstDigit = id / 100;
 
         switch (firstDigit) {
@@ -30,5 +30,10 @@ public enum WeatherEnum {
             default:
                 return WeatherEnum.CLEAR
         }
+    }
+    
+    public func getImageName() -> String {
+        let str = "\(self)"
+        return str.lowercased()
     }
 }

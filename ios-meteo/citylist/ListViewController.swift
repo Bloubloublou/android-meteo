@@ -10,6 +10,8 @@ import UIKit
 
 class ListViewController: UITableViewController,ApiCallerDelegate {
     
+    @IBOutlet var cityTableView: UITableView!
+    
     private var apiCaller: ApiCaller!
     
     override func viewDidLoad() {
@@ -23,27 +25,40 @@ class ListViewController: UITableViewController,ApiCallerDelegate {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // adding one because the last one is the botom row
-        //return UserPrefs.getInstance().getCities().count + 1
-        return UserPrefs.getInstance().getCities().count
+        return UserPrefs.getInstance().getCities().count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cityList = UserPrefs.getInstance().getCities()
-        let forecast: InstantCityWeather = CitiesWeatherForecast.getInstance().getForecastFrom(cityList[indexPath.row])[0]
-         
-        //if(indexPath.row < cityList.count) {
+        let unit = UserPrefs.getInstance().isImperial() ? UnitEnum.IMPERIAL : UnitEnum.METRIC
+        
+        if(indexPath.row < cityList.count) {
+            let forecast: InstantCityWeather = CitiesWeatherForecast.getInstance().getForecastFrom(cityList[indexPath.row])[0]
             let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! CityTableViewCell
-            
+                
             cell.cityNameLabel.text = cityList[indexPath.row]
             cell.hourLabel.text = forecast.getWeatherDescription()
-            cell.temperatureLabel.text = "\(forecast.getTemperatureInUnit(UnitEnum.METRIC))°"
-            //cell.weatherImageView = TODO
-        //} else {}
-        return cell
+            cell.temperatureLabel.text = "\(forecast.getTemperatureInUnit(unit))°"
+            cell.weatherImageView.image = UIImage(named:WeatherEnum.getWeather(forecast.getWeather()).getImageName())
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "bottomCell", for: indexPath) as! BottomCell
+            
+            cell.switchDegreeCallBack = self.switchDegree
+            // TODO
+            return cell
+        }
     }
     
     func callHasFinished() {
         // nothing
+    }
+    
+    public func switchDegree() {
+       print("henlo clicked !")
+        UserPrefs.getInstance().setIsImperial(!UserPrefs.getInstance().isImperial())
+        
+        cityTableView.reloadData()
     }
 }
 
