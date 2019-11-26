@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		7704C74123887A6700EB0316 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704C74023887A6700EB0316 /* AppDelegate.swift */; };
 		7704C74323887A6700EB0316 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704C74223887A6700EB0316 /* SceneDelegate.swift */; };
-		7704C74523887A6700EB0316 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704C74423887A6700EB0316 /* ViewController.swift */; };
+		7704C74523887A6700EB0316 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704C74423887A6700EB0316 /* ListViewController.swift */; };
 		7704C74823887A6700EB0316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7704C74623887A6700EB0316 /* Main.storyboard */; };
 		7704C74A23887A6800EB0316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7704C74923887A6800EB0316 /* Assets.xcassets */; };
 		7704C74D23887A6800EB0316 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7704C74B23887A6800EB0316 /* LaunchScreen.storyboard */; };
 		7704C75823887A6900EB0316 /* ios_meteoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704C75723887A6900EB0316 /* ios_meteoTests.swift */; };
 		7704C76323887A6900EB0316 /* ios_meteoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704C76223887A6900EB0316 /* ios_meteoUITests.swift */; };
+		77B671BA238D59AD00CA64E5 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B671B9238D59AD00CA64E5 /* CityTableViewCell.swift */; };
 		77E946C4238AFDD300C18888 /* CitiesWeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E946C3238AFDD300C18888 /* CitiesWeatherForecast.swift */; };
 		77E946C6238AFDF000C18888 /* InstantCityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E946C5238AFDF000C18888 /* InstantCityWeather.swift */; };
 		77E946C8238AFE0300C18888 /* UnitEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E946C7238AFE0300C18888 /* UnitEnum.swift */; };
@@ -44,7 +45,7 @@
 		7704C73D23887A6700EB0316 /* ios-meteo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-meteo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7704C74023887A6700EB0316 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7704C74223887A6700EB0316 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7704C74423887A6700EB0316 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7704C74423887A6700EB0316 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		7704C74723887A6700EB0316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7704C74923887A6800EB0316 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7704C74C23887A6800EB0316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		7704C75E23887A6900EB0316 /* ios-meteoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-meteoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7704C76223887A6900EB0316 /* ios_meteoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_meteoUITests.swift; sourceTree = "<group>"; };
 		7704C76423887A6900EB0316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77B671B9238D59AD00CA64E5 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		77E946C3238AFDD300C18888 /* CitiesWeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesWeatherForecast.swift; sourceTree = "<group>"; };
 		77E946C5238AFDF000C18888 /* InstantCityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantCityWeather.swift; sourceTree = "<group>"; };
 		77E946C7238AFE0300C18888 /* UnitEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitEnum.swift; sourceTree = "<group>"; };
@@ -111,10 +113,10 @@
 		7704C73F23887A6700EB0316 /* ios-meteo */ = {
 			isa = PBXGroup;
 			children = (
+				77B671B6238D563B00CA64E5 /* citylist */,
 				77E946C2238AFD9000C18888 /* weather-data */,
 				7704C74023887A6700EB0316 /* AppDelegate.swift */,
 				7704C74223887A6700EB0316 /* SceneDelegate.swift */,
-				7704C74423887A6700EB0316 /* ViewController.swift */,
 				7704C74623887A6700EB0316 /* Main.storyboard */,
 				7704C74923887A6800EB0316 /* Assets.xcassets */,
 				7704C74B23887A6800EB0316 /* LaunchScreen.storyboard */,
@@ -141,6 +143,15 @@
 				7704C76423887A6900EB0316 /* Info.plist */,
 			);
 			path = "ios-meteoUITests";
+			sourceTree = "<group>";
+		};
+		77B671B6238D563B00CA64E5 /* citylist */ = {
+			isa = PBXGroup;
+			children = (
+				7704C74423887A6700EB0316 /* ListViewController.swift */,
+				77B671B9238D59AD00CA64E5 /* CityTableViewCell.swift */,
+			);
+			path = citylist;
 			sourceTree = "<group>";
 		};
 		77E946C2238AFD9000C18888 /* weather-data */ = {
@@ -285,8 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7704C74523887A6700EB0316 /* ViewController.swift in Sources */,
+				7704C74523887A6700EB0316 /* ListViewController.swift in Sources */,
 				77E946C6238AFDF000C18888 /* InstantCityWeather.swift in Sources */,
+				77B671BA238D59AD00CA64E5 /* CityTableViewCell.swift in Sources */,
 				7704C74123887A6700EB0316 /* AppDelegate.swift in Sources */,
 				77E946C4238AFDD300C18888 /* CitiesWeatherForecast.swift in Sources */,
 				77E946CA238AFE0F00C18888 /* WeatherEnum.swift in Sources */,

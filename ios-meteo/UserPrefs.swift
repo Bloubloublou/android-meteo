@@ -28,6 +28,10 @@ class UserPrefs {
     }
     
     public func getCities() -> [String] {
+        if(preferences.array(forKey: UserPrefs.CITIES_KEY) as? [String] == nil) {
+            return []
+        }
+        
         return preferences.array(forKey: UserPrefs.CITIES_KEY) as! [String]
     }
 }
