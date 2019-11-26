@@ -20,9 +20,4 @@ public class BottomCell: UITableViewCell {
     @IBAction func switchDegreeClick(_ sender: Any) {
         switchDegreeCallBack()
     }
-    
-    @IBAction func addCityClick(_ sender: Any) {
-        
-    }
-    
 }
