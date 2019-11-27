@@ -13,7 +13,6 @@ class SearchViewController: UIViewController,ApiCallerDelegate {
     }
     
     @objc func textFieldDidReturn() {
-        print("need to close")
         searchTextField.resignFirstResponder()
         if(searchTextField.text != "") {
               UserPrefs.getInstance().addCity(searchTextField.text!)

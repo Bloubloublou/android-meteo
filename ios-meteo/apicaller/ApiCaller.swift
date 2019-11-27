@@ -28,7 +28,6 @@ public class ApiCaller {
                 else {
                     if let data = data {
                         let dataString = String(data: data, encoding: String.Encoding.utf8)
-                        //print("Response is :\n\(dataString!)")
                         if let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary {
                             let forecast :[InstantCityWeather] = self.jsonToForecast(jsonObj)
                             if(forecast.count == 0) {
@@ -48,7 +47,6 @@ public class ApiCaller {
             }
             dataTask.resume()
             dispatchGroup.notify(queue: .main) {
-                print("henlo finished")
                 self.delegate.callHasFinished()
             }
         }

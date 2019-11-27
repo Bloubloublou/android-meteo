@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  ios-meteo
-//
-//  Created by Christelle on 22/11/2019.
-//  Copyright © 2019 b_lagouge. All rights reserved.
-//
-
 import UIKit
 
 class ListViewController: UITableViewController,ApiCallerDelegate {
@@ -13,14 +5,12 @@ class ListViewController: UITableViewController,ApiCallerDelegate {
     @IBOutlet var cityTableView: UITableView!
     
     private var apiCaller: ApiCaller!
+    private var tappedIndex = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserPrefs.getInstance().addCity("Marseille")
         apiCaller = ApiCaller(self)
     apiCaller.updateForecasts(UserPrefs.getInstance().getCities())
-        
-        print("henlo list")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,6 +29,9 @@ class ListViewController: UITableViewController,ApiCallerDelegate {
             cell.hourLabel.text = forecast.getWeatherDescription()
             cell.temperatureLabel.text = "\(forecast.getTemperatureInUnit(unit))°"
             cell.weatherImageView.image = UIImage(named:WeatherEnum.getWeather(forecast.getWeather()).getImageName())
+            cell.id = indexPath.row
+            cell.tapCallBack = self.tapCallBack
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "bottomCell", for: indexPath) as! BottomCell
@@ -54,10 +47,22 @@ class ListViewController: UITableViewController,ApiCallerDelegate {
     }
     
     public func switchDegree() {
-       print("henlo clicked !")
         UserPrefs.getInstance().setIsImperial(!UserPrefs.getInstance().isImperial())
         
         cityTableView.reloadData()
+    }
+    
+    public func tapCallBack(_ i: Int) {
+        tappedIndex = i
+        performSegue(withIdentifier: "listToDetailled", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "listToDetailled" {
+            if let viewController = segue.destination as? DetailledViewController {
+                viewController.id = tappedIndex
+            }
+        }
     }
 }
 
