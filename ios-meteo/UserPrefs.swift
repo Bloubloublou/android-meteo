@@ -16,6 +16,12 @@ class UserPrefs {
         return instance!
     }
     
+    public func removeCity(_ city: String) {
+        var cities:[String] = getCities()
+        cities.remove(at: cities.index(of: city)!)
+        setCities(cities)
+    }
+    
     public func addCity(_ city: String) {
         var cities:[String] = getCities()
         for registeredCity in cities {

@@ -29,14 +29,13 @@ class ListViewController: UITableViewController,ApiCallerDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cityList = UserPrefs.getInstance().getCities()
         let unit = UserPrefs.getInstance().isImperial() ? UnitEnum.IMPERIAL : UnitEnum.METRIC
         
-        if(indexPath.row < cityList.count) {
-            let forecast: InstantCityWeather = CitiesWeatherForecast.getInstance().getForecastFrom(cityList[indexPath.row])[0]
+        if(indexPath.row < UserPrefs.getInstance().getCities().count) {
+            let forecast: InstantCityWeather = CitiesWeatherForecast.getInstance().getForecastFrom(UserPrefs.getInstance().getCities()[indexPath.row])[0]
             let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! CityTableViewCell
                 
-            cell.cityNameLabel.text = cityList[indexPath.row]
+            cell.cityNameLabel.text = UserPrefs.getInstance().getCities()[indexPath.row]
             cell.hourLabel.text = forecast.getWeatherDescription()
             cell.temperatureLabel.text = "\(forecast.getTemperatureInUnit(unit))°"
             cell.weatherImageView.image = UIImage(named:WeatherEnum.getWeather(forecast.getWeather()).getImageName())

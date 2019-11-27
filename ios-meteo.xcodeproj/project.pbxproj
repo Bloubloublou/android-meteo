@@ -18,6 +18,8 @@
 		77401724238D93C100B7A5FD /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77401723238D93C100B7A5FD /* SplashScreen.swift */; };
 		77401728238D99FD00B7A5FD /* ApiCallerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77401727238D99FD00B7A5FD /* ApiCallerDelegate.swift */; };
 		7740172E238DC9AE00B7A5FD /* BottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7740172D238DC9AE00B7A5FD /* BottomCell.swift */; };
+		774C9B4E238E95F100FEB001 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774C9B4D238E95F100FEB001 /* SearchViewController.swift */; };
+		774C9B52238EA46000FEB001 /* DetailledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774C9B51238EA46000FEB001 /* DetailledViewController.swift */; };
 		77B671BA238D59AD00CA64E5 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B671B9238D59AD00CA64E5 /* CityTableViewCell.swift */; };
 		77E946C4238AFDD300C18888 /* CitiesWeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E946C3238AFDD300C18888 /* CitiesWeatherForecast.swift */; };
 		77E946C6238AFDF000C18888 /* InstantCityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E946C5238AFDF000C18888 /* InstantCityWeather.swift */; };
@@ -62,6 +64,8 @@
 		77401723238D93C100B7A5FD /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		77401727238D99FD00B7A5FD /* ApiCallerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCallerDelegate.swift; sourceTree = "<group>"; };
 		7740172D238DC9AE00B7A5FD /* BottomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCell.swift; sourceTree = "<group>"; };
+		774C9B4D238E95F100FEB001 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		774C9B51238EA46000FEB001 /* DetailledViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailledViewController.swift; sourceTree = "<group>"; };
 		77B671B9238D59AD00CA64E5 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		77E946C3238AFDD300C18888 /* CitiesWeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesWeatherForecast.swift; sourceTree = "<group>"; };
 		77E946C5238AFDF000C18888 /* InstantCityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantCityWeather.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		7704C73F23887A6700EB0316 /* ios-meteo */ = {
 			isa = PBXGroup;
 			children = (
+				774C9B50238EA44B00FEB001 /* detailled */,
 				77401726238D99E600B7A5FD /* apicaller */,
 				77B671B6238D563B00CA64E5 /* citylist */,
 				77E946C2238AFD9000C18888 /* weather-data */,
@@ -130,6 +135,7 @@
 				7704C74E23887A6800EB0316 /* Info.plist */,
 				77E946CD238AFE2F00C18888 /* UserPrefs.swift */,
 				77401723238D93C100B7A5FD /* SplashScreen.swift */,
+				774C9B4D238E95F100FEB001 /* SearchViewController.swift */,
 			);
 			path = "ios-meteo";
 			sourceTree = "<group>";
@@ -159,6 +165,14 @@
 				77401727238D99FD00B7A5FD /* ApiCallerDelegate.swift */,
 			);
 			path = apicaller;
+			sourceTree = "<group>";
+		};
+		774C9B50238EA44B00FEB001 /* detailled */ = {
+			isa = PBXGroup;
+			children = (
+				774C9B51238EA46000FEB001 /* DetailledViewController.swift */,
+			);
+			path = detailled;
 			sourceTree = "<group>";
 		};
 		77B671B6238D563B00CA64E5 /* citylist */ = {
@@ -318,9 +332,11 @@
 				77B671BA238D59AD00CA64E5 /* CityTableViewCell.swift in Sources */,
 				7704C74123887A6700EB0316 /* AppDelegate.swift in Sources */,
 				77E946C4238AFDD300C18888 /* CitiesWeatherForecast.swift in Sources */,
+				774C9B52238EA46000FEB001 /* DetailledViewController.swift in Sources */,
 				77E946CA238AFE0F00C18888 /* WeatherEnum.swift in Sources */,
 				77401728238D99FD00B7A5FD /* ApiCallerDelegate.swift in Sources */,
 				77E946C8238AFE0300C18888 /* UnitEnum.swift in Sources */,
+				774C9B4E238E95F100FEB001 /* SearchViewController.swift in Sources */,
 				7704C74323887A6700EB0316 /* SceneDelegate.swift in Sources */,
 				77401724238D93C100B7A5FD /* SplashScreen.swift in Sources */,
 				7740172E238DC9AE00B7A5FD /* BottomCell.swift in Sources */,

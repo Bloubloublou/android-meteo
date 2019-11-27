@@ -4,7 +4,6 @@ import UIKit
 public class BottomCell: UITableViewCell {
 
     @IBOutlet weak var switchDegreeButton: UIButton!
-    @IBOutlet weak var addCityButton: UIButton!
     
     public var switchDegreeCallBack: (()->())!
     
